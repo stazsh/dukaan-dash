@@ -1,4 +1,4 @@
-import { Link, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Payments from "../applets/Payments";
 import TopBar from "./TopBar";
 import { AnimatePresence, motion } from "framer-motion";
@@ -47,15 +47,17 @@ function Workspace() {
                 variants={pageTransitions}
                 transition={{ duration: 0.1, delay: 0 }}
               >
-                <div className="mb-5 text-8xl">404</div>
+                <div className="mb-5 text-8xl">Hi</div>
                 <span className="text-gray-400 group h-4">
                   Resource not found. Go to&nbsp;
-                  <Link
-                    to="/payments"
-                    className="group-hover:border-b font-semibold inline-block text-blue-500 group-hover:text-blue-400 border-blue-500"
+                  <div
+                    onClick={() => {
+                      document.querySelector("#Payments-menu").click();
+                    }}
+                    className="group-hover:border-b font-semibold inline-block cursor-pointer text-blue-500 group-hover:text-blue-400 border-blue-500"
                   >
                     payments
-                  </Link>
+                  </div>
                   <RiLink
                     fontSize={20}
                     className="ml-1 inline-block text-blue-500 group-hover:text-blue-400"

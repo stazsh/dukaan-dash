@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const routes = {
+export const routes = {
   Home: ["home.svg", "/home"],
   Products: ["products.svg", "/products"],
   Delivery: ["delivery.svg", "/delivery"],
@@ -28,6 +28,7 @@ function TopletsNavPane() {
       {Object.keys(routes).map((applet) =>
         applet !== selected ? (
           <div
+            id={applet + "-menu"}
             key={applet}
             className="p-3 flex items-center opacity-80 hover:opacity-100 flex-row space-x-3 rounded-md bg-white bg-opacity-0 hover:bg-opacity-20 duration-100 cursor-pointer font-medium"
             onClick={() => setSelected(applet)}
